@@ -21,7 +21,8 @@ class ProductSeeder extends Seeder
             ['code' => '590001', 'name' => 'QUẦN NỈ TÚI HỘP BO GẤU', 'description' => 'CHẤT LIỆU NỈ', 'category_id' => 2, 'price' => 180000, 'is_top' => 0, 'on_sale' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['code' => '590002', 'name' => 'QUẦN NỈ ESSENTIALS PANTS', 'description' => 'CHẤT LIỆU NỈ', 'category_id' => 2, 'price' => 180000, 'is_top' => 0, 'on_sale' => 0, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['code' => '591001', 'name' => 'SET BỘ NỈ CAO CỔ OVERSIZE YWH', 'description' => 'CHẤT LIỆU NỈ', 'category_id' => 3, 'price' => 350000, 'is_top' => 0, 'on_sale' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-            ['code' => '592001', 'name' => 'KHĂN LEN J.L SCRAFT', 'description' => 'CHẤT LIỆU LEN', 'category_id' => 3, 'price' => 200000, 'is_top' => 0, 'on_sale' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
+            ['code' => '592001', 'name' => 'KHĂN LEN J.L SCRAFT', 'description' => 'CHẤT LIỆU LEN', 'category_id' => 3, 'price' => 200000, 'is_top' => 0, 'on_sale' => 1, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['code' => '592002', 'name' => 'KHĂN LEN JJ.V SCRAFT', 'description' => 'CHẤT LIỆU LEN', 'category_id' => 3, 'price' => 200000, 'is_top' => 0, 'on_sale' => 0, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
         ]);
     }
 }

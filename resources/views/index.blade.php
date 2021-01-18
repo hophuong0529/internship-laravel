@@ -232,7 +232,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="main_bg1">
 <div class="wrap">	
 	<div class="main1">
-		<h2>featured products</h2>
+		<h2>latest products</h2>
 	</div>
 </div>
 </div>
@@ -242,72 +242,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="main">
 		<!-- start grids_of_3 -->
 		<div class="grids_of_3">
+			@foreach ($products as $product)
 			<div class="grid1_of_3">
-				<a href="details.html">
-					<img src="public/images/pic1.jpg" alt=""/>
-					<h3>branded shoes</h3>
+				<a href="#">
+					<img src="public/images/.." alt=""/>
+					<h3>{{ $product->name }}</h3>
 					<div class="price">
-						<h4>$300<span>indulge</span></h4>
+						<h4>{{ $product->price }}<span>Detail</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
 			</div>
-			<div class="grid1_of_3">
-				<a href="details.html">
-					<img src="public/images/pic2.jpg" alt=""/>
-					<h3>branded t-shirts</h3>
-					<div class="price">
-						<h4>$300<span>indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="grid1_of_3">
-				<a href="details.html">
-					<img src="public/images/pic3.jpg" alt=""/>
-					<h3>branded tees</h3>
-					<div class="price">
-						<h4>$300<span>indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
+			@endforeach
 			<div class="clear"></div>
 		</div>
-		<div class="grids_of_3">
-			<div class="grid1_of_3">
-				<a href="details.html">
-					<img src="public/images/pic4.jpg" alt=""/>
-					<h3>branded bags</h3>
-					<div class="price">
-						<h4>$300<span>indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="grid1_of_3">
-				<a href="details.html">
-					<img src="public/images/pic5.jpg" alt=""/>
-					<h3>ems women bag</h3>
-					<div class="price">
-						<h4>$300<span>indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="grid1_of_3">
-				<a href="details.html">
-					<img src="public/images/pic6.jpg" alt=""/>
-					<h3>branded cargos</h3>
-					<div class="price">
-						<h4>$300<span>indulge</span></h4>
-					</div>
-					<span class="b_btm"></span>
-				</a>
-			</div>
-			<div class="clear"></div>
-		</div>	
-		<!-- end grids_of_3 -->
 	</div>
 </div>
 </div>	
