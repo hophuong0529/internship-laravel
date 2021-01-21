@@ -1,10 +1,10 @@
 @extends('layouts.index')
 @section('title', 'Online Shop Website')
 @section('style')
-    <link href="public/css/slider.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="public/css/owl.carousel.css" rel="stylesheet">
-    <script type="text/javascript" src="public/js/modernizr.custom.28468.js"></script>
-    <script type="text/javascript" src="public/js/jquery.cslider.js"></script>
+    <link href="{{ asset('public/css/slider.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{ asset('public/css/owl.carousel.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="{{ asset('public/js/modernizr.custom.28468.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/jquery.cslider.js') }}"></script>
     <script type="text/javascript">
         $(function () {
             $('#da-slider').cslider();
@@ -12,7 +12,7 @@
     </script>
     <!-- Owl Carousel Assets -->
 
-    <script src="public/js/owl.carousel.js"></script>
+    <script src="{{ asset('public/js/owl.carousel.js') }}"></script>
     <script>
         $(document).ready(function () {
             $("#owl-demo").owlCarousel({
@@ -28,13 +28,13 @@
             });
         });
     </script>
-    <script type="text/javascript" src="public/js/move-top.js"></script>
-    <script type="text/javascript" src="public/js/easing.js"></script>
+    <script type="text/javascript" src="{{ asset('public/js/move-top.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/js/easing.js') }}"></script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             $(".scroll").click(function (event) {
                 event.preventDefault();
-                $('html, body').animate({scrollTop: $(this.hash).offset().top}, 1200);
+                $('html, body').animate({"scrollTop": $(this.hash).offset().top}, 1200);
             });
         });
     </script>
@@ -47,7 +47,7 @@
                 hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line
                 Lane.</p>
             <a href="{{ url('product/1') }}" class="da-link" style="width: 20%;">shop now</a>
-            <div class="da-img"><img src="{{ asset('public/images/0001-1.jpg') }}"/></div>
+            <div class="da-img"><img src="{{ asset('public/images/0001-1.jpg') }}" alt=""/></div>
         </div>
         <div class="da-slide" style="margin-left: 150px;">
             <h2>Easy management</h2>
@@ -55,14 +55,14 @@
                 blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
                 ocean.</p>
             <a href="{{ url('product/5') }}" class="da-link" style="width: 20%;">shop now</a>
-            <div class="da-img"><img src="{{ asset('public/images/0005-1.jpg') }}"/></div>
+            <div class="da-img"><img src="{{ asset('public/images/0005-1.jpg') }}" alt=""/></div>
         </div>
         <div class="da-slide" style="margin-left: 150px;">
             <h2>Revolution</h2>
             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
                 paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
             <a href="{{ url('product/3') }}" class="da-link" style="width: 20%;">shop now</a>
-            <div class="da-img"><img src="{{ asset('public/images/0003-1.jpg') }}"/></div>
+            <div class="da-img"><img src="{{ asset('public/images/0003-1.jpg') }}" alt=""/></div>
         </div>
         <nav class="da-arrows">
             <span class="da-arrows-prev"></span>
@@ -116,7 +116,7 @@
                     @foreach ($top_products as $product)
                         <div class="grid1_of_3">
                             <a href="product/{{ $product->id }}">
-                                <img src="public/{{ $product->images[0]->path }}" alt=""/>
+                                <img src="{{ asset('public/'. $product->images[0]->path) }}" alt=""/>
                                 <h3>{{ $product->name }}</h3>
                             </a>
                             <div class="price">

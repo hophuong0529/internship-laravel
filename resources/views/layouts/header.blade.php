@@ -6,18 +6,16 @@
             </div>
             <div class="h_icon">
                 <ul class="icon1 sub-icon1">
-                    <li><a class="active-icon c1" href="#"><i>$300</i></a>
-                        <ul class="sub-icon1 list">
-                            <li><h3>shopping cart empty</h3><a href=""></a></li>
-                            <li><p>if items in your wishlit are missing, <a href="#">contact us</a> to view them</p>
-                            </li>
-                        </ul>
+                    <li>
+                        <a class="active-icon c1" href="{{ url('cart') }}"><i>{{ number_format(session('total'),0,',','.') }}</i></a>
                     </li>
                 </ul>
             </div>
             <div class="h_search">
                 <form method="get" action="{{ url('search') }}">
-                    <input type="text" value="" name="keyword">
+                    <label>
+                        <input type="text" value="" name="keyword">
+                    </label>
                     <input type="submit" value="">
                 </form>
             </div>
@@ -53,21 +51,15 @@
                     <a href="#" id="w3-menu-trigger"> </a>
                     <ul class="nav-list" style="">
                         <li class="nav-item"><a href="{{ url('/') }}">Home</a></li>
-                        <li class="nav-item"><a href="sale.html">Our Shop</a></li>
-                        <li class="nav-item"><a href="handbags.html">Our Sale</a></li>
-                        <li class="nav-item"><a href="handbags.html">Our Service</a></li>
-                        <li class="nav-item"><a href="accessories.html">Blog</a></li>
-                        <li class="nav-item"><a href="wallets.html">Contact</a></li>
+                        <li class="nav-item"><a href="#">Our Shop</a></li>
+                        <li class="nav-item"><a href="#">Our Sale</a></li>
+                        <li class="nav-item"><a href="#">Our Service</a></li>
+                        <li class="nav-item"><a href="#">Blog</a></li>
+                        <li class="nav-item"><a href="#">Contact</a></li>
                         <li class="nav-item"><a href="{{ url('login') }}">Sign In</a></li>
                         <li class="nav-item"><a href="{{ url('register') }}">Sign Up</a></li>
                     </ul>
                 </nav>
-                <div class="search_box">
-                    <form>
-                        <input type="text" value="Search" onfocus="this.value = '';"
-                               onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
-                    </form>
-                </div>
                 <div class="clear"></div>
                 <script src="{{ asset('public/js/responsive.menu.js') }}"></script>
             </div>

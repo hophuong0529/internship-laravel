@@ -5,8 +5,9 @@
         <div class="wrap">
             <div class="main">
                 @if(!empty($products))
-                    <span style="font-size: 25px;"><i class="fa fa-align-right"></i> We cannot found the keyword '<span style="color: red;">{{ $keyword }}</span>'</span>
-                    <div class="clear" style="height: 200px;"></div>
+                    <div class="clear" style="height: 100px;"></div>
+                    <span style="font-size: 25px; margin-left: 40%;"><i class="fa fa-align-right"></i> We cannot found the keyword '<span style="color: red;">{{ $keyword }}</span>'</span>
+                    <div class="clear" style="height: 100px;"></div>
                 @else
                     <span style="font-size: 25px;"><i class="fa fa-align-right"></i> Search results for the keyword '<span style="color: red;">{{ $keyword }}</span>'</span>
                 <!-- start grids_of_3 -->

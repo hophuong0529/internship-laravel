@@ -64,23 +64,21 @@
                                     <h5>{{ number_format($product->price, 0, ', ', '.') }} VNĐ<a href="#">click for
                                             offer</a></h5>
                                     <div class="btn_form">
-                                        <form>
-                                            <input type="submit" value="add to cart" title=""/>
-                                        </form>
+                                        <a href="{{url('cart/add/'.$product->id)}}" class="btn btn-danger" style="width: 200px; font-size: 16px;">Add to Cart</a>
                                     </div>
-                                    <div class="clear"></div>
+                                    <div class="clear" style="margin-bottom: 60px;"></div>
                                     <div class="share-desc">
                                         <div class="share">
                                             <h4>Share Product :</h4>
                                             <ul class="share_nav">
                                                 <li><a href="#"><img src="{{ asset('public/images/facebook.png') }}"
-                                                                     title="Facebook"></a></li>
+                                                                     title="Facebook" alt=""></a></li>
                                                 <li><a href="#"><img src="{{ asset('public/images/twitter.png') }}"
-                                                                     title="Twitter"></a></li>
+                                                                     title="Twitter" alt=""></a></li>
                                                 <li><a href="#"><img src="{{ asset('public/images/rss.png') }}"
-                                                                     title="Rss"></a></li>
+                                                                     title="Rss" alt=""></a></li>
                                                 <li><a href="#"><img src="{{ asset('public/images/gpluse.png') }}"
-                                                                     title="Google+"></a></li>
+                                                                     title="Google+" alt=""></a></li>
                                             </ul>
                                         </div>
                                         <div class="clear"></div>
@@ -100,19 +98,21 @@
                                     </div>
                                     <div class="banner-wrap bottom_banner color_link">
                                         <a href="#" class="main_link">
-                                            <figure><img src="images/delivery.png" alt=""></figure>
+                                            <figure><img src="{{ asset('images/delivery.png') }}" alt=""></figure>
                                             <h5><span>Free Shipping</span><br> on orders over $99.</h5>
                                             <p>This offer is valid on all our store items.</p></a>
                                     </div>
                                     <div class="brands">
                                         <h1>Brands</h1>
                                         <div class="field">
-                                            <select class="select1">
-                                                <option>Please Select</option>
-                                                <option>Lorem ipsum dolor sit amet</option>
-                                                <option>Lorem ipsum dolor sit amet</option>
-                                                <option>Lorem ipsum dolor sit amet</option>
-                                            </select>
+                                            <label>
+                                                <select class="select1">
+                                                    <option>Please Select</option>
+                                                    <option>Lorem ipsum dolor sit amet</option>
+                                                    <option>Lorem ipsum dolor sit amet</option>
+                                                    <option>Lorem ipsum dolor sit amet</option>
+                                                </select>
+                                            </label>
                                         </div>
                                     </div>
                                 </div>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,6 @@ Route::get('', [HomeController::class, 'home']);
 Route::get('product/{id}', [HomeController::class, 'details']);
 
 Route::get('search', [HomeController::class, 'search']);
+
+Route::get('cart/{action?}/{id?}', [CartController::class, 'cart']);
+Route::post('cart/{action?}/{id?}', [CartController::class, 'cart']);
