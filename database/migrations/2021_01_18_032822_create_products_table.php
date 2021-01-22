@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('description', 1000);
             $table->integer('category_id')->foreign()->references('id')->on('categories');
             $table->integer('price');
+            $table->integer('quantity');
             $table->timestamps();
             $table->integer('is_top');
             $table->integer('on_sale');

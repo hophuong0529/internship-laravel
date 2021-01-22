@@ -17,7 +17,7 @@ class CreateCartsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->foreign()->references('id')->on('users');
             $table->integer('product_id')->foreign()->references('id')->on('products');
-            $table->integer('quality');
+            $table->integer('quantity');
             $table->integer('status');
         });
     }
