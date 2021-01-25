@@ -48,5 +48,20 @@ class CartController extends Controller
         $carts = $this->repository->all();
         return view('admin.carts.index')->with('carts', $carts);
     }
+
+    public function delete($id)
+    {
+        $cart = $this->repository->find($id);
+        if(empty($cart))
+        {
+            return redirect()->route('carts.index')->with('message', 'Cart has ID = '. $id. 'does not exist.');
+        } else {
+            $carts = $this->repository->delete($id);
+        }
+
+        return redirect()->route('carts.index')
+            ->with('carts', $carts)
+            ->with('message', 'Deleted success.');
+    }
 }
 

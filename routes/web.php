@@ -18,7 +18,7 @@ use App\Http\Controllers\ProductController;
 */
 Route::get('', [HomeController::class, 'home'])->name('home');
 
-Route::get('products/{id}', [ProductController::class, 'details']);
+Route::get('products/{id}', [HomeController::class, 'details']);
 
 Route::get('search', [HomeController::class, 'search']);
 

@@ -43,7 +43,7 @@
                 <td>{{ $product->category->name }}</td>
                 <td style="text-align: right;">
                     <a style="padding-right: 20px; text-decoration: none;" class="fa fa-edit" href="{{ route('products.edit', ['id' => $product->id]) }}"></a>
-                    <a onclick="return confirm('Bạn có chắc chắn xóa?')" style="color: red; text-decoration: none; padding-right: 20px;" class="fa fa-close" href="{{ route('products.delete', ['id' => $product->id]) }}"></a>
+                    <a onclick="return confirm('Are you sure delete it?')" style="color: red; text-decoration: none; padding-right: 20px;" class="fa fa-close" href="{{ route('products.delete', ['id' => $product->id]) }}"></a>
                 </td>
             </tr>
         @endforeach
