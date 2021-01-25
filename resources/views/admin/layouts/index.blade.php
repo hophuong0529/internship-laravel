@@ -45,7 +45,6 @@
 <script type="text/javascript" src="{{ asset('public/lib/gritter-conf.js') }}"></script>
 <script src="{{ asset('public/lib/sparkline-chart.js') }}"></script>
 <script src="{{ asset('public/lib/zabuto_calendar.js') }}"></script>
-<script type="text/javascript" src="{{ asset('public/lib/bootstrap-fileupload/bootstrap-fileupload.js') }}"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         const unique_id = $.gritter.add({
@@ -108,6 +107,5 @@
         console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
     }
 </script>
-<script src="{{ asset('public/lib/advanced-form-components.js') }}"></script>
 </body>
 </html>
