@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -16,23 +15,6 @@ class HomeController extends Controller
         $this->data['top_products'] =  $top_products ?? [];
 
         return view('home', $this->data);
-    }
-
-    public function details($slug)
-    {
-        $names = Product::pluck('id','name');
-        foreach ($names as $name => $id)
-            if(Str::slug($name) == $slug) {
-                $product_id = $id;
-            }
-        $product = Product::find($product_id);
-        $product_images = $product->images;
-        $related_products = Product::where('category_id', $product->category_id)->limit(3)->get();
-        $this->data['product_images'] =  $product_images ?? [];
-        $this->data['product'] =  $product ?? [];
-        $this->data['related_products'] =  $related_products ?? [];
-
-        return view('details', $this->data);
     }
 
     public function search(Request $request)

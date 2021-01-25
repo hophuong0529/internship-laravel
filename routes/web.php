@@ -18,7 +18,7 @@ use App\Http\Controllers\ProductController;
 */
 Route::get('', [HomeController::class, 'home'])->name('home');
 
-Route::get('products/{id}', [HomeController::class, 'details']);
+Route::get('products/{id}', [ProductController::class, 'details']);
 
 Route::get('search', [HomeController::class, 'search']);
 
@@ -38,5 +38,12 @@ Route::prefix('admin')->group(function() {
         Route::get('edit/{id}', [ProductController::class, 'edit'])->name('products.edit');
         Route::post('edit/{id}', [ProductController::class, 'update'])->name('products.update');
         Route::get('delete/{id}', [ProductController::class, 'delete'])->name('products.delete');
+    });
+
+    Route::prefix('carts')->middleware('admin')->group(function () {
+        Route::get('', [CartController::class, 'index'])->name('carts.index');
+        Route::get('edit/{id}', [CartController::class, 'edit'])->name('carts.edit');
+        Route::post('edit/{id}', [CartController::class, 'update'])->name('carts.update');
+        Route::get('delete/{id}', [CartController::class, 'delete'])->name('carts.delete');
     });
 });

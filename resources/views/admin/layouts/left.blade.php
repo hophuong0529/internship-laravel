@@ -23,7 +23,7 @@
                 </a>
             </li>
             <li class="mt">
-                <a href="javascript:">
+                <a href="{{ route('carts.index') }}">
                     <i class="fa fa-shopping-cart"></i>
                     <span>Carts</span>
                 </a>

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Image;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Repositories\Product\ProductRepository;
 use App\Models\Category;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 
 class ProductController extends Controller
@@ -16,6 +18,23 @@ class ProductController extends Controller
     public function __construct(ProductRepository $repository)
     {
         $this->repository = $repository;
+    }
+
+    public function details($slug)
+    {
+        $names = Product::pluck('id','name');
+        foreach ($names as $name => $id)
+            if(Str::slug($name) == $slug) {
+                $product_id = $id;
+            }
+        $product = Product::find($product_id);
+        $product_images = $product->images;
+        $related_products = Product::where('category_id', $product->category_id)->limit(3)->get();
+        $this->data['product_images'] =  $product_images ?? [];
+        $this->data['product'] =  $product ?? [];
+        $this->data['related_products'] =  $related_products ?? [];
+
+        return view('details', $this->data);
     }
 
     public function index()
