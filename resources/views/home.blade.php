@@ -46,7 +46,7 @@
             <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her
                 hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line
                 Lane.</p>
-            <a href="{{ url('products/1') }}" class="da-link" style="width: 20%;">shop now</a>
+            <a href="{{ url('products/ao-hoodie-oversize-webarebears') }}" class="da-link" style="width: 20%;">shop now</a>
             <div class="da-img"><img src="{{ asset('public/images/0001-1.jpg') }}" alt=""/></div>
         </div>
         <div class="da-slide" style="margin-left: 150px;">
@@ -54,14 +54,14 @@
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
                 blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
                 ocean.</p>
-            <a href="{{ url('products/5') }}" class="da-link" style="width: 20%;">shop now</a>
+            <a href="{{ url('products/set-bo-ni-cao-co-oversize-ywh') }}" class="da-link" style="width: 20%;">shop now</a>
             <div class="da-img"><img src="{{ asset('public/images/0005-1.jpg') }}" alt=""/></div>
         </div>
         <div class="da-slide" style="margin-left: 150px;">
             <h2>Revolution</h2>
             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
                 paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-            <a href="{{ url('products/3') }}" class="da-link" style="width: 20%;">shop now</a>
+            <a href="{{ url('products/quan-ni-tui-hop-bo-gau') }}" class="da-link" style="width: 20%;">shop now</a>
             <div class="da-img"><img src="{{ asset('public/images/0003-1.jpg') }}" alt=""/></div>
         </div>
         <nav class="da-arrows">
@@ -85,7 +85,7 @@
                 <div class="grids_of_3">
                     @foreach ($latest_products as $product)
                         <div class="grid1_of_3">
-                            <a href="product/{{ $product->id }}">
+                            <a href="{{ url('products/'. $slug = Str::slug($product->name, '-')) }}">
                                 <img src="{{ asset('public/'. $product->images[0]->path) }}" alt=""/>
                                 <h3>{{ $product->name }}</h3>
                             </a>
@@ -115,7 +115,7 @@
                 <div class="grids_of_3">
                     @foreach ($top_products as $product)
                         <div class="grid1_of_3">
-                            <a href="product/{{ $product->id }}">
+                            <a href="{{ url('products/'. $slug = Str::slug($product->name, '-')) }}">
                                 <img src="{{ asset('public/'. $product->images[0]->path) }}" alt=""/>
                                 <h3>{{ $product->name }}</h3>
                             </a>

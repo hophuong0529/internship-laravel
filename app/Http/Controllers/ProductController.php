@@ -33,7 +33,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:products',
             'code' => 'required',
             'category_id' => 'required|alpha_num',
             'price' => 'required|alpha_num',
@@ -83,7 +83,7 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:products,name,'. $id,
             'code' => 'required',
             'category_id' => 'required|alpha_num',
             'price' => 'required|alpha_num',
