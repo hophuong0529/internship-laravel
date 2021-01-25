@@ -1,25 +1,30 @@
 @extends('admin.layouts.index')
 @section('title', 'List products')
 @section('content')
+    @if(session()->has('message'))
+        <div class="alert alert-success" style="text-align: center; font-weight: bold;">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <div class="row" style="margin: 30px 30px 30px 150px;">
         <div class="col-md-10">
             <h1 style="text-align: center;">List products</h1>
         </div>
         <div class="col-md-2">
-            <a href="{{ route('products.create') }}" class="btn btn-success" style="width: 150px;"><i class="fa fa-plus"></i> Add</a>
+            <a href="{{ route('products.create') }}" class="btn btn-success" style="width: 150px; margin-top: 20px;"><i class="fa fa-plus"></i> Add</a>
         </div>
     </div>
     <table class="table table-striped" style="text-align: center;">
         <thead>
         <tr>
-            <th width="5%" style="text-align: center; color: red;">Code</th>
-            <th width="20%" style="text-align: center; color: red;">Image</th>
-            <th width="15%" style="text-align: center; color: red;">Name</th>
-            <th width="15%" style="text-align: center; color: red;">Price</th>
-            <th width="5%" style="text-align: center; color: red;">Quantity</th>
-            <th width="20%" style="text-align: center; color: red;">Description</th>
-            <th width="10%" style="text-align: center; color: red;">Category</th>
-            <th width="10%" style="text-align: center; color: red;"></th>
+            <th style="text-align: center; width: 5%; color: red;">Code</th>
+            <th style="text-align: center; width: 20%; color: red;">Image</th>
+            <th style="text-align: center; width: 15%; color: red;">Name</th>
+            <th style="text-align: center; width: 15%; color: red;">Price</th>
+            <th style="text-align: center; width: 5%; color: red;">Quantity</th>
+            <th style="text-align: center; width: 20%; color: red;">Description</th>
+            <th style="text-align: center; width: 10%; color: red;">Category</th>
+            <th style="text-align: center; width: 10%; color: red;"></th>
         </tr>
         </thead>
         <tbody>
@@ -35,8 +40,8 @@
                 <td>{{ $product->description }}</td>
                 <td>{{ $product->category->name }}</td>
                 <td style="text-align: initial;">
-                    <a style="padding-right: 40px; text-decoration: none;" class="fa fa-edit" href="{{ url('admin/productEdit/'.$product->id) }}"></a>
-                    <a onclick="return confirm('Bạn có chắc chắn xóa?')" style="color: red; text-decoration: none;" class="fa fa-close" href="{{url('admin/productDelete/'.$product->id)}}"></a>
+                    <a style="padding-right: 40px; text-decoration: none;" class="fa fa-edit" href="{{ route('products.edit', ['id' => $product->id]) }}"></a>
+                    <a onclick="return confirm('Bạn có chắc chắn xóa?')" style="color: red; text-decoration: none;" class="fa fa-close" href="{{ route('products.delete', ['id' => $product->id]) }}"></a>
                 </td>
             </tr>
         @endforeach

@@ -340,8 +340,7 @@
             <div class="desc">
                 <div class="thumb">
                     <img class="img-circle" src="{{ asset('public/images/ui-divya.jpg') }}" width="35px"
-                         height="35px"
-                         align="" alt="">
+                         height="35px" alt="">
                 </div>
                 <div class="details">
                     <p>
@@ -354,8 +353,7 @@
             <div class="desc">
                 <div class="thumb">
                     <img class="img-circle" src="{{ asset('public/images/ui-sherman.jpg') }}" width="35px"
-                         height="35px"
-                         align="" alt="">
+                         height="35px" alt="">
                 </div>
                 <div class="details">
                     <p>
@@ -368,8 +366,7 @@
             <div class="desc">
                 <div class="thumb">
                     <img class="img-circle" src="{{ asset('public/images/ui-danro.jpg') }}" width="35px"
-                         height="35px"
-                         align="" alt="">
+                         height="35px" alt="">
                 </div>
                 <div class="details">
                     <p>
@@ -381,8 +378,7 @@
             <!-- Fourth Member -->
             <div class="desc">
                 <div class="thumb">
-                    <img class="img-circle" src="{{ asset('public/images/ui-zac.jpg') }}" width="35px" height="35px"
-                         align="" alt="">
+                    <img class="img-circle" src="{{ asset('public/images/ui-zac.jpg') }}" width="35px" height="35px" alt="">
                 </div>
                 <div class="details">
                     <p>
