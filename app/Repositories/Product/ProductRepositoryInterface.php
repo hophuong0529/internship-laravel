@@ -2,8 +2,6 @@
 
 namespace App\Repositories\Product;
 
-use App\Repositories\RepositoryInterface;
-
 interface ProductRepositoryInterface
 {
     public function find($id);

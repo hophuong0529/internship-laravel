@@ -3,9 +3,6 @@
 namespace App\Repositories\Product;
 
 use App\Models\Product;
-use App\Repositories\RepositoryAbstract;
-use App\Repositories\Product\ProductRepositoryInterface;
-use Illuminate\Database\Eloquent\Model;
 
 class ProductRepository implements ProductRepositoryInterface
 {

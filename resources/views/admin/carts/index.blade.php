@@ -15,8 +15,9 @@
         <thead>
         <tr>
             <th style="text-align: center; width: 10%; color: red;">Id</th>
-            <th style="text-align: center; width: 25%; color: red;">User Infomation</th>
-            <th style="text-align: center; width: 45%; color: red;">Product Infomation</th>
+            <th style="text-align: center; width: 20%; color: red;">User Infomation</th>
+            <th style="text-align: center; width: 40%; color: red;">Product Infomation</th>
+            <th style="text-align: center; width: 10%; color: red;">Quantity</th>
             <th style="text-align: center; width: 10%; color: red;">Status</th>
             <th style="text-align: center; width: 10%; color: red;"></th>
         </tr>
@@ -33,8 +34,8 @@
                     <img width="30%" style="padding-bottom: 10px;" src="{{ asset('public/'. $cart->product->images[0]->path) }}" alt=""/> <br>
                     Code: {{ $cart->product->code }} <br>
                     Name: {{ $cart->product->name }} <br>
-                    Quantity: {{ $cart->quantity }}
                 </td>
+                <td>{{ $cart->quantity }}</td>
                 <td>
                     {{ ($cart->status == '0' ? 'Unprocessed' : 'Processed') }}
                 </td>

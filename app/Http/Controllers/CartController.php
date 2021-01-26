@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\cart\CartRepository;
+use App\Models\Product;
+use App\Models\User;
+use App\Repositories\Cart\CartRepository;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -47,6 +49,31 @@ class CartController extends Controller
     {
         $carts = $this->repository->all();
         return view('admin.carts.index')->with('carts', $carts);
+    }
+
+    public function edit($id)
+    {
+        $cart = $this->repository->find($id);
+        $users = User::all();
+        $products = Product::all();
+        if(empty($cart))
+        {
+            return redirect()->route('carts.index')->with('message','Cart has ID = '. $id. 'does not exist.');
+        }
+
+        return view('admin.carts.edit', compact('cart', 'users', 'products'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'quantity' => 'required|alpha_num',
+        ]);
+
+        $data = $request->all();
+        $this->repository->edit($data, $id);
+
+        return redirect()->route('carts.index')->with('message', 'Updated success.');
     }
 
     public function delete($id)

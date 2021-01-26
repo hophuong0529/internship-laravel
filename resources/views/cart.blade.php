@@ -7,7 +7,7 @@
         ?>
         <br>
         <div style="padding-top: 20px; padding-left: 80px; padding-right: 40px; text-align: center; font-size: 20px;">
-            <form method="post" action="{{url('cart/update')}}" id="frm">
+            <form method="post" action="{{ url('cart/update') }}" id="frm">
                 @csrf
                 <div class="cart row" style="font-weight: bold; color: #ba1826; padding-bottom: 10px;">
                     <div class="col-md-2">Image</div>
@@ -31,7 +31,7 @@
                         </div>
                         <div class="col-md-2 text-cart">
                             <label>
-                                <input class="form-control form-control-sm" min="1" type="number" name="{{ $product->id }}"
+                                <input class="form-control form-control-sm" min="1" max= {{ $product->quantity }} type="number" name="{{ $product->id }}"
                                        value='{{ session("cart.$product->id") }}'>
                             </label>
                         </div>
