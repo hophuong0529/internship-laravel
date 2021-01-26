@@ -1,5 +1,14 @@
 @extends('admin.layouts.index')
 @section('title', 'Edit product')
+@section('style')
+    <style>
+        .gallery img {
+            width: 30%;
+            padding-right: 20px;
+            padding-bottom: 10px;
+        }
+    </style>
+@endsection
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -47,13 +56,38 @@
                         <tr>
                             <td style="font-weight: bold;">Product Images</td>
                             <td>
-                                @foreach($product->images as $image)
-                                    <div class="col-md-4" style="float: left; margin-bottom: 20px;">
-                                        <img src="{{ asset('public/'. $image->path) }}" alt="" style="width: 100%;">
+                                <div class="gallery">
+                                    <div class="product-image">
+                                        @foreach($product->images as $image)
+                                            <img src="{{ asset('public/'. $image->path) }}" alt="" style="width: 30%;"/>
+                                        @endforeach
                                     </div>
-                                @endforeach
-                                <input type="file" class="form-control" name="image[]"
+                                </div>
+                                <input type="file" class="form-control" name="image[]" id="gallery-photo-add"
                                        accept="image/gif, image/jpeg, image/png" multiple/>
+                                <script>
+                                    $(function () {
+                                        const imagesPreview = function (input, placeToInsertImagePreview) {
+                                            if (input.files) {
+                                                const filesAmount = input.files.length;
+
+                                                for (let i = 0; i < filesAmount; i++) {
+                                                    const reader = new FileReader();
+
+                                                    reader.onload = function (event) {
+                                                        $($.parseHTML('<img alt="" src=""/>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                                                    }
+                                                    reader.readAsDataURL(input.files[i]);
+                                                }
+                                            }
+                                        };
+
+                                        $('#gallery-photo-add').on('change', function () {
+                                            $('.product-image').css('display', 'none');
+                                            imagesPreview(this, 'div.gallery');
+                                        });
+                                    });
+                                </script>
                             </td>
                         </tr>
                         <tr>

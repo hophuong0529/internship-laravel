@@ -1,5 +1,14 @@
 @extends('admin.layouts.index')
 @section('title', 'Create a products')
+@section('style')
+<style>
+    .gallery img {
+        width: 30%;
+        padding-left: 20px;
+        padding-bottom: 10px;
+    }
+</style>
+@endsection
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -46,9 +55,32 @@
                         <tr>
                             <td style="font-weight: bold;">Product Images</td>
                             <td>
-                                <input type="file" class="form-control" name="image[]" accept="image/gif, image/jpeg, image/png" multiple/>
+                                <div class="gallery"></div>
+                                <input type="file" class="form-control" id="gallery-photo-add" name="image[]" accept="image/gif, image/jpeg, image/png" multiple/>
                             </td>
                         </tr>
+                        <script>
+                            $(function () {
+                                const imagesPreview = function (input, placeToInsertImagePreview) {
+                                    if (input.files) {
+                                        const filesAmount = input.files.length;
+
+                                        for (let i = 0; i < filesAmount; i++) {
+                                            const reader = new FileReader();
+
+                                            reader.onload = function (event) {
+                                                $($.parseHTML('<img alt="" src=""/>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                                            }
+                                            reader.readAsDataURL(input.files[i]);
+                                        }
+                                    }
+                                };
+
+                                $('#gallery-photo-add').on('change', function () {
+                                    imagesPreview(this, 'div.gallery');
+                                });
+                            });
+                        </script>
                         <tr>
                             <td style="font-weight: bold;">Product Price</td>
                             <td><label>
