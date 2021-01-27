@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('title', 'Detail Products')
+@section('title', $product->name)
 @section('style')
     <link rel="stylesheet" type="text/css" href="{{ asset('public/css/productviewgallery.css') }}" media="all"/>
     <script type="text/javascript" src="{{ asset('public/js/jquery.min.js') }}"></script>
@@ -64,7 +64,7 @@
                                     <h5>{{ number_format($product->price, 0, ', ', '.') }} VNĐ<a href="#">click for
                                             offer</a></h5>
                                     <div class="btn_form">
-                                        <a href="{{url('cart/add/'.$product->id)}}" class="btn btn-danger" style="width: 200px; font-size: 16px;">Add to Cart</a>
+                                        <a href="{{ url('cart/add/'.$product->id) }}" class="btn btn-danger" style="width: 200px; font-size: 16px;">Add to Cart</a>
                                     </div>
                                     <div class="clear" style="margin-bottom: 60px;"></div>
                                     <div class="share-desc">
@@ -223,7 +223,7 @@
                 <div class="grids_of_3">
                     @foreach ($related_products as $product)
                         <div class="grid1_of_3">
-                            <a href="product/{{ $product->id }}">
+                            <a href="{{ url('products/'. $slug = Str::slug($product->name, '-')) }}">
                                 <img src="{{ asset('public/'. $product->images[0]->path) }}" alt=""/>
                                 <h3>{{ $product->name }}</h3>
                             </a>

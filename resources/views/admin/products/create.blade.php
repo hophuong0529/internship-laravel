@@ -4,8 +4,8 @@
 <style>
     .gallery img {
         width: 30%;
-        padding-left: 20px;
-        padding-bottom: 10px;
+        padding-right: 20px;
+        padding-bottom: 15px;
     }
 </style>
 @endsection

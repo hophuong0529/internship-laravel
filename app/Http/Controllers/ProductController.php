@@ -58,7 +58,7 @@ class ProductController extends Controller
             'price' => 'required|alpha_num',
             'quantity' => 'required|alpha_num',
             'description' => 'required',
-            'image' => 'required|image',
+            'image' => 'required',
         ]);
 
         $data = $request->all();

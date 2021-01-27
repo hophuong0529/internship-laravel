@@ -5,7 +5,7 @@
         .gallery img {
             width: 30%;
             padding-right: 20px;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
     </style>
 @endsection
