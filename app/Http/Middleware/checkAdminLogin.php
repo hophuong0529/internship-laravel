@@ -17,10 +17,13 @@ class checkAdminLogin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->is_admin == 1) {
-            return $next($request);
-        } else {
-            return abort(401);
+        if(Auth::check()) {
+            if (Auth::user()->is_admin == 1) {
+                return $next($request);
+            } else {
+                return abort(403);
+            }
         }
+        return abort(401);
     }
 }
