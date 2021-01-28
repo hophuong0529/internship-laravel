@@ -85,14 +85,14 @@
                 <div class="grids_of_3">
                     @foreach ($latest_products as $product)
                         <div class="grid1_of_3">
-                            <a href="{{ url('products/'. $slug = Str::slug($product->name, '-')) }}">
+                            <a href="{{ url('products/'. $slug = Str::slug($product->name, '-')) }}" style="text-decoration:none">
                                 <img src="{{ asset('public/'. $product->images[0]->path) }}" alt=""/>
                                 <h3>{{ $product->name }}</h3>
-                            </a>
-                            <div class="price">
-                                <h4>{{ number_format($product->price, 0, ', ', '.') }} VNĐ<span>indulge</span></h4>
-                            </div>
+                                <div class="price">
+                                    <h4>{{ number_format($product->price, 0, ', ', '.') }} VNĐ<span>indulge</span></h4>
+                                </div>
                             <span class="b_btm"></span>
+                            </a>
                         </div>
                     @endforeach
                     <div class="clear"></div>
@@ -115,7 +115,7 @@
                 <div class="grids_of_3">
                     @foreach ($top_products as $product)
                         <div class="grid1_of_3">
-                            <a href="{{ url('products/'. $slug = Str::slug($product->name, '-')) }}">
+                            <a href="{{ url('products/'. $slug = Str::slug($product->name, '-')) }}" style="text-decoration:none">
                                 <img src="{{ asset('public/'. $product->images[0]->path) }}" alt=""/>
                                 <h3>{{ $product->name }}</h3>
                             </a>

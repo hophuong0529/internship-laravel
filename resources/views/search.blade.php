@@ -4,7 +4,7 @@
     <div class="main_bg">
         <div class="wrap">
             <div class="main">
-                @if(!empty($products))
+                @if(empty($products))
                     <div class="clear" style="height: 100px;"></div>
                     <span style="font-size: 25px; margin-left: 40%;"><i class="fa fa-align-right"></i> We cannot found the keyword '<span style="color: red;">{{ $keyword }}</span>'</span>
                     <div class="clear" style="height: 100px;"></div>

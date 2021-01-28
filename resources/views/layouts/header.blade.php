@@ -4,7 +4,7 @@
             <div class="logo">
                 <a href="{{ url('') }}"><img src="{{ asset('public/images/logo.png') }}" alt=""/> </a>
             </div>
-            <div class="h_icon">
+            <div class="h_icon" style="width: 12%">
                 <ul class="icon1 sub-icon1">
                     <li>
                         <a class="active-icon c1" href="{{ url('cart') }}"><i>{{ number_format(session('total'),0,',','.') }}</i></a>

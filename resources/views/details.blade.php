@@ -226,11 +226,11 @@
                             <a href="{{ url('products/'. $slug = Str::slug($product->name, '-')) }}">
                                 <img src="{{ asset('public/'. $product->images[0]->path) }}" alt=""/>
                                 <h3>{{ $product->name }}</h3>
+                                <div class="price">
+                                    <h4>{{ number_format($product->price, 0, ', ', '.') }} VNĐ<span>indulge</span></h4>
+                                </div>
+                                <span class="b_btm"></span>
                             </a>
-                            <div class="price">
-                                <h4>{{ number_format($product->price, 0, ', ', '.') }} VNĐ<span>indulge</span></h4>
-                            </div>
-                            <span class="b_btm"></span>
                         </div>
                     @endforeach
                     <div class="clear"></div>
