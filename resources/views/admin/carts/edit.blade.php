@@ -28,7 +28,7 @@
                                         <option value="{{ $cart->user->id }}" selected>{{ $cart->user->name }}
                                             - {{ $cart->user->email }}</option>
                                         @foreach($users as $user)
-                                            <option value="{{ $user->id }}">{{ $user->name }}
+                                            <option value="{{ $user->id }}" {{ ($user->id == $cart->user->id ? 'hidden' : '') }}>{{ $user->name }}
                                                 - {{ $user->email }}</option>
                                         @endforeach
                                     </select>
@@ -38,19 +38,33 @@
                         <tr>
                             <td style="font-weight: bold; width: 30%;">Product</td>
                             <td>
-                                <img width="15%" style="padding-bottom: 10px;" src="{{ asset('public/'. $cart->product->images[0]->path) }}" alt=""/> <br>
-                                <label>
-                                    <select name="product_id" class="form-control">
+                                <div class="image-dt">
+                                    <img style="width: 25%" src="{{ asset('public/'. $cart->product->images[0]->path) }}" alt=""/>
+                                </div>    
+                                <img class="image-swap" style="width: 25%" src=""/> <br>
+                                <label class="label-select">
+                                    <select id="select-product" name="product_id" class="form-control">
                                         <option value="{{ $cart->product->id }}" selected>{{ $cart->product->code }}
                                             - {{ $cart->product->name }}</option>
                                         @foreach($products as $product)
-                                            <option value="{{ $product->id }}">{{ $product->code }}
+                                            <option data-divid="{{ asset('public/'. $product->images[0]->path) }}" value="{{ $product->id }}" {{ ($product->id == $cart->product->id ? 'hidden' : '') }}>{{ $product->code }}
                                                 - {{ $product->name }}</option>
                                         @endforeach
                                     </select>
                                 </label>
                             </td>
                         </tr>
+                        <script>
+                            $(document).ready(function(){
+                                $("#select-product").change(function() {
+                                    $('.image-dt').css('display', 'none');
+                                    $('.label-select').css('padding-top', '18px');
+                                    var opt = $('option[value=' + this.value + ']', this);
+                                    var divid = opt.data('divid');
+    	                            $('.image-swap').attr('src', divid);
+                                });
+                            });
+                        </script>
                         <tr>
                             <td style="font-weight: bold;">Quantity</td>
                             <td><label>

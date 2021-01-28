@@ -35,7 +35,7 @@
                                     <select name="category_id" class="form-control">
                                         <option value="{{ $product->category->id }}" selected>{{ $product->category->name }}</option>
                                         @foreach($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            <option value="{{ $category->id }}" {{ ($category->id == $product->category->id ? 'hidden' : '') }}>{{ $category->name }}</option>
                                         @endforeach
                                     </select>
                                 </label>
@@ -57,7 +57,7 @@
                             <td style="font-weight: bold;">Product Images</td>
                             <td>
                                 <div class="gallery">
-                                    <div class="product-image">
+                                    <div class="image-dt">
                                         @foreach($product->images as $image)
                                             <img src="{{ asset('public/'. $image->path) }}" alt="" style="width: 30%;"/>
                                         @endforeach
@@ -83,7 +83,7 @@
                                         };
 
                                         $('#gallery-photo-add').on('change', function () {
-                                            $('.product-image').css('display', 'none');
+                                            $('.image-dt').css('display', 'none');
                                             imagesPreview(this, 'div.gallery');
                                         });
                                     });
