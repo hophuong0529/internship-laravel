@@ -14,7 +14,7 @@
     <link href="{{ asset('public/lib/font-awesome/css/font-awesome.css" rel="stylesheet') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('public/lib/gritter/css/jquery.gritter.css') }}" />
     <!-- Custom styles for this template -->
-    <link href="{{ asset('public/css/admin-style.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/admin-style-1.css') }}" rel="stylesheet">
     <link href="{{ asset('public/css/style-responsive.css') }}" rel="stylesheet">
     <script src="{{ asset('public/lib/chart-master/Chart.js') }}"></script>
     <script src="{{ asset('public/lib/jquery/jquery.min.js') }}"></script>

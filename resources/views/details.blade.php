@@ -94,6 +94,8 @@
                                             <li><a href="#">Always free from repetition</a></li>
                                             <li><a href="#">Always free from repetition</a></li>
                                             <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
+                                            <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
+                                            <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
                                         </ul>
                                     </div>
                                     <div class="banner-wrap bottom_banner color_link">
@@ -223,7 +225,7 @@
                 <div class="grids_of_3">
                     @foreach ($related_products as $product)
                         <div class="grid1_of_3">
-                            <a href="{{ url('products/'. $slug = Str::slug($product->name, '-')) }}">
+                            <a href="{{ url('products/'. $slug = Str::slug($product->name, '-')) }}" style="text-decoration: none;">
                                 <img src="{{ asset('public/'. $product->images[0]->path) }}" alt=""/>
                                 <h3>{{ $product->name }}</h3>
                                 <div class="price">

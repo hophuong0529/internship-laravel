@@ -32,7 +32,7 @@
                     |
                     <li><a href="#">our shop</a></li>
                     |
-                    <li><a href="#">our sale</a></li>
+                    <li><a href="{{ url('sale-product') }}">our sale</a></li>
                     |
                     <li><a href="#">our service</a></li>
                     |

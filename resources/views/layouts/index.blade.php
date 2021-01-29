@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a7e8114d11.js" crossorigin="anonymous"></script>
-    <link href="{{ asset('public/css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{ asset('public/css/style-1.css') }}" rel="stylesheet" type="text/css" media="all"/>
     @yield('style')
 </head>
 <body>

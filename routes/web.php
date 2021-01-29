@@ -21,6 +21,9 @@ Route::get('', [HomeController::class, 'home'])->name('home');
 Route::get('products/{id}', [ProductController::class, 'details']);
 
 Route::get('search', [HomeController::class, 'search']);
+Route::get('top-product', [HomeController::class, 'productTop']);
+Route::get('sale-product', [HomeController::class, 'productSale']);
+
 
 Route::get('cart/{action?}/{id?}', [CartController::class, 'cart']);
 Route::post('cart/{action?}/{id?}', [CartController::class, 'cart']);
