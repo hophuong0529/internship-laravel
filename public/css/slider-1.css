@@ -1,9 +1,5 @@
-@font-face {
-    font-family: 'bebas_neueregular';
-    src:url(../fonts/BebasNeue-webfont.ttf) format('truetype');
-}
 .da-slider{
-    font-family: 'bebas_neueregular';
+    font-family: Arial,sans-serif;
 	width: 100%;
 	min-width: 520px;
 	height: 480px;
@@ -59,7 +55,7 @@
 }
 .da-slide h2{
 	color: #fff;
-	font-size: 66px;
+	font-size: 50px;
 	width: 50%;
 	top: 75px;
 	white-space: nowrap;
@@ -68,13 +64,12 @@
 	margin-left: 30px;
 }
 .da-slide p{
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: Arial, sans-serif;
 	width: 40%;
 	top: 165px;
 	color: #ECFFFD;
 	font-size: 18px;
 	line-height: 26px;
-	height: 80px;
 	overflow: hidden;
 	margin-left: 30px;
 }
@@ -88,7 +83,7 @@
 }
 .da-slide .da-link{
 	margin-left: 30px;
-	top: 270px;
+	top: 310px;
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;

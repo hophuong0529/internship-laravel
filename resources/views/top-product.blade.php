@@ -4,11 +4,11 @@
     <div class="main_bg">
         <div class="wrap">
             <div class="main">
-                <span style="font-size: 28px;">Top Product</span>
+                <h1 style="font-size: 24px; padding-top: 20px; font-weight: bold; color: #3CC395; text-align: center;"></i> Sản phẩm bán chạy</h1>
                 <div class="grids_of_3">
                     @foreach ($products as $product)
                         <div class="grid1_of_3">
-                            <a href="{{ url('products/'. $slug = Str::slug($product->name, '-')) }}" style="text-decoration: none;">
+                            <a href="{{ url('products/'. $slug = Str::slug($product->name, '-')) }}">
                                 <img src="{{ asset('public/'. $product->images[0]->path) }}" alt=""/>
                                 <h3>{{ $product->name }}</h3>
                                 <div class="price">

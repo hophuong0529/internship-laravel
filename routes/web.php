@@ -5,6 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +27,19 @@ Route::get('search', [HomeController::class, 'search']);
 Route::get('top-product', [HomeController::class, 'productTop']);
 Route::get('sale-product', [HomeController::class, 'productSale']);
 
-
-Route::get('cart/{action?}/{id?}', [CartController::class, 'cart']);
+Route::get('cart/{action?}/{id?}', [CartController::class, 'cart'])->middleware('user');
 Route::post('cart/{action?}/{id?}', [CartController::class, 'cart']);
+
+Route::get('login', [LoginController::class, 'login'])->name('login');
+Route::post('login', [LoginController::class, 'postLogin']);
+Route::get('register', [LoginController::class, 'register']);
+Route::post('register', [LoginController::class, 'postRegister']);
+Route::get('logout', [LoginController::class, 'logout']);
+
+Route::get('order', [OrderController::class, 'order']);
+Route::post('order', [OrderController::class, 'postOrder']);
+
+Route::get('user/purchase', [UserController::class, 'purchase']);
 
 Route::prefix('admin')->group(function() {
     Route::get('', [AdminController::class, 'home'])->name('admin.home')->middleware(['admin']);

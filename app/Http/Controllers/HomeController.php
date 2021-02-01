@@ -26,14 +26,14 @@ class HomeController extends Controller
         return view('search', $this->data);
     }
 
-    public function productTop()
+    public function productTop(Request $request)
     {
         $products = Product::where('is_top', 1)->get();
         $this->data['products'] =  $products ?? [];
         return view('top-product', $this->data);
     }
 
-    public function productSale()
+    public function productSale(Request $request)
     {
         $products = Product::where('on_sale', 1)->get();
         $this->data['products'] =  $products ?? [];

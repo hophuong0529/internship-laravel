@@ -6,22 +6,22 @@
         $products = \App\Models\Product::whereIn('id', array_keys(session('cart')))->get();
         ?>
         <br>
-        <div style="padding-top: 20px; padding-left: 80px; padding-right: 40px; text-align: center; font-size: 20px;">
+        <div style="padding-top: 20px; padding-left: 80px; padding-right: 40px; text-align: center; font-size: 14px;">
             <form method="post" action="{{ url('cart/update') }}" id="frm">
                 @csrf
                 <div class="cart row" style="font-weight: bold; color: #ba1826; padding-bottom: 10px;">
-                    <div class="col-md-2">Image</div>
-                    <div class="col-md-2">Name</div>
-                    <div class="col-md-2">Price</div>
-                    <div class="col-md-2">Quantity</div>
-                    <div class="col-md-2">Total</div>
-                    <div class="col-md-2"></div>
+                    <div class="col-md-2">Hình ảnh</div>
+                    <div class="col-md-2">Tên</div>
+                    <div class="col-md-2">Giá</div>
+                    <div class="col-md-2">Số lượng</div>
+                    <div class="col-md-2">Số tiền</div>
+                    <div class="col-md-2">Thao tác</div>
                 </div>
                 <hr>
                 @foreach($products as $product)
                     <div class="cart item row">
                         <div class="col-md-2">
-                            <img src="{{ asset('public/'. $product->images[0]->path) }}" alt="" style="width: 100%;">
+                            <img src="{{ asset('public/'. $product->images[0]->path) }}" alt="" style="width: 60%;">
                         </div>
                         <div class="col-md-2 text-cart">
                             {{ $product->name }}
@@ -57,7 +57,7 @@
                     <div class="col-md-2"></div>
                     <div class="col-md-2"></div>
                     <div class="col-md-2"></div>
-                    <div class="col-md-2" style="line-height: 55px;">total bill :</div>
+                    <div class="col-md-2" style="line-height: 55px;">Tổng tiền:</div>
                     <div class="col-md-2"
                          style="color: #ff0000; line-height: 50px; font-size: 25px;">{{ number_format($tongTien,0,',','.') }} ₫
                     </div>
@@ -67,11 +67,11 @@
             <hr>
             <div style="margin-bottom: 80px;">
                 <a onclick="return confirm('Are you sure delete all?');" class="btn btn-danger"
-                   href="{{ url('cart/delete-all') }}" style="width: 150px;">Delete All</a>
+                   href="{{ url('cart/delete-all') }}" style="width: 150px;">Xóa tất cả</a>
                 &nbsp;
-                <input type="submit" value="Update" form="frm" class="btn btn-success" style="width: 150px;">
+                <input type="submit" value="Cập nhật" form="frm" class="btn btn-success" style="width: 150px;">
                 &nbsp;
-                <a href="{{ url('cart/order') }}" class="btn btn-primary" style="width: 150px;">Order</a></div>
+                <a href="{{ url('order') }}" class="btn btn-primary" style="width: 150px;">Đặt hàng</a></div>
             </div>
     @else
         <div class="clear" style="height: 100px;"></div>

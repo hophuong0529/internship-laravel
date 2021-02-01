@@ -7,7 +7,6 @@
     <script type="text/javascript" src="{{ asset('public/js/jquery.fancybox.pack.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/jquery.fancybox-buttons.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/jquery.fancybox-thumbs.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/js/productviewgallery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/move-top.js') }}"></script>
     <script type="text/javascript" src="{{ asset('public/js/easing.js') }}"></script>
@@ -57,19 +56,19 @@
                                 </div>
                             </div>
 
-                            <div class="span1_of_1_des" style="float:left; width: 25%;">
+                            <div class="span1_of_1_des" style="padding-top: 50px;">
                                 <div class="desc1">
                                     <h3>{{ $product->name  }}</h3>
                                     <p>{{ $product->description }}</p>
                                     <h5>{{ number_format($product->price, 0, ', ', '.') }} VNĐ<a href="#">click for
                                             offer</a></h5>
                                     <div class="btn_form">
-                                        <a href="{{ url('cart/add/'.$product->id) }}" class="btn btn-danger" style="width: 200px; font-size: 16px;">Add to Cart</a>
+                                        <a href="{{ url('cart/add/'.$product->id) }}" class="btn btn-danger" style="width: 200px; font-size: 16px;">Thêm vào giỏ hàng</a>
                                     </div>
-                                    <div class="clear" style="margin-bottom: 60px;"></div>
+                                    <div class="clear" style="margin-bottom: 40px;"></div>
                                     <div class="share-desc">
                                         <div class="share">
-                                            <h4>Share Product :</h4>
+                                            <h4>Chia sẻ:</h4>
                                             <ul class="share_nav">
                                                 <li><a href="#"><img src="{{ asset('public/images/facebook.png') }}"
                                                                      title="Facebook" alt=""></a></li>
@@ -85,42 +84,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- end product_slider -->
-                            <div class="left_sidebar" style="float:right; width: 25%;">
-                                <div class="sellers">
-                                    <h4>Best Sellers</h4>
-                                    <div class="single-nav">
-                                        <ul>
-                                            <li><a href="#">Always free from repetition</a></li>
-                                            <li><a href="#">Always free from repetition</a></li>
-                                            <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
-                                            <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
-                                            <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="banner-wrap bottom_banner color_link">
-                                        <a href="#" class="main_link">
-                                            <figure><img src="{{ asset('images/delivery.png') }}" alt=""></figure>
-                                            <h5><span>Free Shipping</span><br> on orders over $99.</h5>
-                                            <p>This offer is valid on all our store items.</p></a>
-                                    </div>
-                                    <div class="brands">
-                                        <h1>Brands</h1>
-                                        <div class="field">
-                                            <label>
-                                                <select class="select1">
-                                                    <option>Please Select</option>
-                                                    <option>Lorem ipsum dolor sit amet</option>
-                                                    <option>Lorem ipsum dolor sit amet</option>
-                                                    <option>Lorem ipsum dolor sit amet</option>
-                                                </select>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <!-- start span1_of_1 -->
                     </div>
                 </div>
                 <div class="clear"></div>
@@ -214,7 +178,7 @@
     <div class="main_bg1">
         <div class="wrap">
             <div class="main1">
-                <h2>related products</h2>
+                <h2>Sản phẩm liên quan</h2>
             </div>
         </div>
     </div>
@@ -225,11 +189,11 @@
                 <div class="grids_of_3">
                     @foreach ($related_products as $product)
                         <div class="grid1_of_3">
-                            <a href="{{ url('products/'. $slug = Str::slug($product->name, '-')) }}" style="text-decoration: none;">
+                            <a href="{{ url('products/'. $slug = Str::slug($product->name, '-')) }}">
                                 <img src="{{ asset('public/'. $product->images[0]->path) }}" alt=""/>
                                 <h3>{{ $product->name }}</h3>
                                 <div class="price">
-                                    <h4>{{ number_format($product->price, 0, ', ', '.') }} VNĐ<span>indulge</span></h4>
+                                    <h4>{{ number_format($product->price, 0, ', ', '.') }} VNĐ<span>Chi tiết</span></h4>
                                 </div>
                                 <span class="b_btm"></span>
                             </a>

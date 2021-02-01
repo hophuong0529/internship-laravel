@@ -28,40 +28,36 @@
         <div class="header_sub">
             <div class="h_menu">
                 <ul>
-                    <li><a href="{{ url('') }}">home</a></li>
+                    <li><a href="{{ url('') }}">Trang chủ</a></li>
                     |
-                    <li><a href="#">our shop</a></li>
+                    <li><a href="#">Tất cả</a></li>
                     |
-                    <li><a href="{{ url('sale-product') }}">our sale</a></li>
+                    <li><a href="{{ url('sale-product') }}">Sale</a></li>
                     |
-                    <li><a href="#">our service</a></li>
+                    <li><a href="#">Áo</a></li>
                     |
-                    <li><a href="#">blog</a></li>
+                    <li><a href="#">Quần</a></li>
                     |
-                    <li><a href="#">contact</a></li>
+                    <li><a href="#">Set</a></li>
                     |
-                    <li><a href="{{ url('login') }}">sign in</a></li>
-                    |
-                    <li><a href="{{ url('register') }}">sign up</a></li>
-                    |
+                    <li><a href="#">Phụ kiện</a></li>
+                    @if(session('username'))
+                        <li class="dropdown" style="padding-left: 250px;">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Xin chào, {{ session('name') }} <span class="caret"></span></a>
+                            <ul class="dropdown-menu" style="margin-left: 350px; text-align: center; z-index: 10000;">
+                                <li></li>
+                                <li><a href="#">Xem thông tin</a></li><br>
+                                <li><a href="{{ url('user/purchase') }}">Lịch sử giao dịch</a></li><br>
+                                <li><a href="{{ url('logout') }}">Đăng xuất</a></li><br>
+                            </ul>
+                        </li>
+                    @else
+                        |
+                        <li><a href="{{ url('login') }}">Đăng nhập</a></li>
+                        |
+                        <li><a href="{{ url('register') }}">Đăng ký</a></li>
+                    @endif
                 </ul>
-            </div>
-            <div class="top-nav">
-                <nav class="nav">
-                    <a href="#" id="w3-menu-trigger"> </a>
-                    <ul class="nav-list" style="">
-                        <li class="nav-item"><a href="{{ url('/') }}">Home</a></li>
-                        <li class="nav-item"><a href="#">Our Shop</a></li>
-                        <li class="nav-item"><a href="#">Our Sale</a></li>
-                        <li class="nav-item"><a href="#">Our Service</a></li>
-                        <li class="nav-item"><a href="#">Blog</a></li>
-                        <li class="nav-item"><a href="#">Contact</a></li>
-                        <li class="nav-item"><a href="{{ url('login') }}">Sign In</a></li>
-                        <li class="nav-item"><a href="{{ url('register') }}">Sign Up</a></li>
-                    </ul>
-                </nav>
-                <div class="clear"></div>
-                <script src="{{ asset('public/js/responsive.menu.js') }}"></script>
             </div>
             <div class="clear"></div>
         </div>
